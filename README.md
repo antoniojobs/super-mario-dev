@@ -7,4 +7,5 @@
 2. CSS
 3. JavaScript
 
-![SuperMario](https://raw.githubusercontent.com/antoniojobs/super-mario-dev/main/mario.gif)
+<!-- ![SuperMario](https://raw.githubusercontent.com/antoniojobs/super-mario-dev/main/mario.gif) -->
+![SuperMario](./assets-readme/mario.gif)
