@@ -7,7 +7,25 @@
     <title>Super-Mario-Dev GAME</title>
 </head>
 <body>
-    <h1>Seja bem vindo ao Super Mario Dev, um game para se aprender</h1>
-    <h2>Em breve uma tela para você brincar e aprender.</h2>
-</body>
-</html>
+        <canvas id="game-main" width="800" height="600"></canvas>
+        <style>
+            body {
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: ivory;
+            }
+            canvas {
+                background-color: darkgray;
+                border: 1px solid #b9b7b7;
+                display: block;
+                margin: 0 auto;
+                /* border-radius: 15px; */
+                box-shadow: -6px 4px 8px 2px rgb(0 0 0 / 45%);
+            }
+        </style>
+
+        <script src="./game.js"></script>
+    </body>
+    </html>
