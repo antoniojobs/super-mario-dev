@@ -7,7 +7,6 @@
 2. CSS
 3. JavaScript
 
-<!-- ![SuperMario](https://raw.githubusercontent.com/antoniojobs/super-mario-dev/main/mario.gif) -->
 # Acesse o link para aconpanhar a evolução do game </br> https://super-mario-dev.vercel.app/
 # Bem-vindo ao Super Mario Dev
 ![SuperMario](./assets-readme/mario.gif)
