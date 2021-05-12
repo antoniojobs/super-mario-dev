@@ -44,8 +44,8 @@ const fundo = {
     alturaRecorte:236,
     posicaoXMapa:0, // posicaoXMapa, dy coordenadas iniciar do desenho no canvas
     posicaoYMapa:0,
-    dWidth:255*2, // tamanho do sprite
-    dHeight:236*2,
+    dWidth:255, // tamanho do sprite
+    dHeight:236,
     desenha(){
         contexto.drawImage(
             spritesMap,
@@ -66,9 +66,9 @@ const chao = {
     larguraRecorte:255, //sW , sH largura e altura
     alturaRecorte:236,
     posicaoXMapa:0, // posicaoXMapa, dy coordenadas iniciar do desenho no canvas
-    posicaoYMapa:355,
-    dWidth:255*2, // tamanho do sprite
-    dHeight:236*2,
+    posicaoYMapa:canvas.height - 45,
+    dWidth:255, // tamanho do sprite
+    dHeight:236,
     desenha(){
         contexto.drawImage(
             spritesMap,
@@ -76,16 +76,50 @@ const chao = {
             chao.larguraRecorte, chao.alturaRecorte, //sW , sH largura e altura
             
             chao.posicaoXMapa, chao.posicaoYMapa, // dx, dy coordenadas iniciar do desenho no canvas
+            chao.dWidth, chao.dHeight, // tamanho do sprite
+        );
+
+        //continuidade do chao
+        contexto.drawImage(
+            spritesMap,
+            chao.coordenadaXSprite, chao.coordenadaYSprite, //sx, coordenadaYSprite inicio da imagem
+            chao.larguraRecorte, chao.alturaRecorte, //sW , sH largura e altura
             
+            chao.posicaoXMapa + chao.larguraRecorte, chao.posicaoYMapa, // dx, dy coordenadas iniciar do desenho no canvas
             chao.dWidth, chao.dHeight, // tamanho do sprite
         );
     }
 }
 
+const montanha = {
+    spritesMap,
+    coordenadaXSprite: 0, //coordenadaXSprite, sy inicio da imagem
+    coordenadaYSprite: 0,
+    larguraRecorte:137, //sW , sH largura e altura
+    alturaRecorte:74,
+    posicaoXMapa:0, // posicaoXMapa, dy coordenadas iniciar do desenho no canvas
+    posicaoYMapa:0,
+    dWidth:255, // tamanho do sprite
+    dHeight:236,
+    desenha(){
+        contexto.drawImage(
+            spritesMap,
+            montanha.coordenadaXSprite, montanha.coordenadaYSprite, //sx, coordenadaYSprite inicio da imagem
+            montanha.larguraRecorte, montanha.alturaRecorte, //sW , sH largura e altura
+            
+            montanha.posicaoXMapa, montanha.posicaoYMapa, // dx, dy coordenadas iniciar do desenho no canvas
+            
+            montanha.dWidth, montanha.dHeight, // tamanho do sprite
+        );
+    }
+}
 function loop() {
-    mario.desenha() ;
+    // montanha.desenha();
+    fundo.desenha();
+    chao.desenha();
+    mario.desenha();
+    mario.posicaoXMapa +=1;
     // fundo.desenha() ;
-    chao.desenha() ;
     requestAnimationFrame(loop);
 }
 loop();
